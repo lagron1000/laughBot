@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Laugh Track Bot</h1>
+        <br>
+        <button id="laugh1" class="btn btn-danger btn-circle btn-lg" onclick="
+        document.getElementById('player').currentTime = 0;;
+        document.getElementById('player').volume = 0.2;
+        document.getElementById('player').play()">Play</button>
+        <audio id="player" src="assets\laugh\laugh.mp3" type="audio/mpeg"></audio>
+    </div>
+
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="/socket.io-client/dist/socket.io.js"></script>
+    <!-- <script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script> -->
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
