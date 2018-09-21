@@ -10,19 +10,40 @@
 </head>
 
 <body>
-    <div id="form" class="container">
-        <a id="login" href="#">Login to Twitch</a>
-        <a id="logout" href="#">Logout from Twitch</a>
+    <a id="logout" href="#" style="padding: 10px">Logout from Twitch</a>
+    <div class="home">
+        <h1 style="padding: 15px">Laugh Track Bot</h1>
+        <div id="form" class="container">
+            <div id="guide">
+                <h3>In order to use the Bot, You need to sign into Your Twitch account.</h3>
+                <h6>As soon as you do, the Bot enters Your chat. The Bot will leave the chat the moment You log out.</h6>
+            </div>
+            <a id="login" href="#">Login to Twitch</a>
+        </div>
+        <div id="main" class="container">
+            <h6>You'll need to leave this page open in order to have the Bot start one of these sound clips when the Chat triggers
+                him.
+            </h6>
+            <h6>Low delay streams recommended!</h6>
+            <br>
+            <button id="laugh1" class="btn btn-danger btn-circle btn-lg audioBtn" onclick="
+                    document.getElementById('player').currentTime = 0;;
+                    document.getElementById('player').volume = 0.2;
+                    document.getElementById('player').play()">Laugh</button>
+            <audio id="player" src="assets\laugh\laugh.mp3" type="audio/mpeg"></audio>
+            <button id="boo" class="btn btn-danger btn-circle btn-lg audioBtn" onclick="
+            document.getElementById('booPlayer').currentTime = 0;;
+            document.getElementById('booPlayer').volume = 0.2;
+            document.getElementById('booPlayer').play()">Boo</button>
+            <audio id="booPlayer" src="assets\boo\boo.mp3" type="audio/mpeg"></audio>
+            <button id="boo" class="btn btn-danger btn-circle btn-lg audioBtn" onclick="
+            document.getElementById('hypePlayer').currentTime = 0;;
+            document.getElementById('hypePlayer').volume = 0.2;
+            document.getElementById('hypePlayer').play()">Hype</button>
+            <audio id="hypePlayer" src="assets\cheer\cheer.mp3" type="audio/mpeg"></audio>
+        </div>
     </div>
-    <div id="main" class="container">
-        <h1>Laugh Track Bot</h1>
-        <br>
-        <button id="laugh1" class="btn btn-danger btn-circle btn-lg" onclick="
-        document.getElementById('player').currentTime = 0;;
-        document.getElementById('player').volume = 0.2;
-        document.getElementById('player').play()">Play</button>
-        <audio id="player" src="assets\laugh\laugh.mp3" type="audio/mpeg"></audio>
-    </div>
+
 
 
     <script src="jquery/dist/jquery.js"></script>
@@ -31,6 +52,7 @@
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
     <script src="main.js" type="module"></script>
+    <script src="rules.js" type="module"></script>
 </body>
 
 </html>

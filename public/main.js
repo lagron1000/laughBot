@@ -1,4 +1,6 @@
 // let checkLUL = setInterval(function(){LULCounter = 0}, 5000)
+import rules from '/rules.js';
+
 var reg = /\b(lul|lol|ha)+\b/gi
 var LULCounter = 0;
 Twitch.init({ clientId: '0swf50e2k1wc7r4d10qqirz6g74n37' }, function (error, status) {
@@ -25,20 +27,22 @@ Twitch.init({ clientId: '0swf50e2k1wc7r4d10qqirz6g74n37' }, function (error, sta
                 var client = new tmi.client(options);
                 client.on("chat", function (channel, userstate, message, self) {
                     if (self) return;
-                    if (reg.test(message)) {
-                        console.log(reg.test(message))
-                        LULCounter++;
-                    }
-                    if (LULCounter >= 2) {
-                        document.getElementById('player').play()
-                        client.say(channel, "hahahaha");
-                        LULCounter = 0
-                        // clearInterval(checkLUL)
+                    for (let i = 0; i < rules.length; i++) {
+                        if (rules[i].keyWords.test(message)) {
+                            console.log(rules[i].keyWords.test(message))
+                            rules[i].counter++;
+                        }
+                        if (rules[i].counter >= 2) {
+                            rules[i].responseDir.play()
+                            client.say(channel, rules[i].responseText);
+                            rules[i].counter = 0
+                            // clearInterval(checkLUL)
+                        }
                     }
                 });
                 client.connect();
             });
-
+            $('#guide').hide();
             $('#main').show();
         } else if (!status.authenticated) {
             $('#logout').hide();

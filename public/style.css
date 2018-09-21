@@ -1,4 +1,4 @@
-.container{
+.home{
     text-align: center;
 }
 #main{
@@ -8,7 +8,7 @@
     display: none;
 }
 #form{
-    width: 20%;
+    width: 70%;
     padding: 50px
 }
 .btn-circle {
@@ -20,3 +20,4 @@
     line-height: 1.42;
     border-radius: 50%;
   }
+
