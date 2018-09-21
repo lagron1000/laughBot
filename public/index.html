@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Laugh Track Bot</title>
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="\assets\LUL.jpg">
 </head>
 
 <body>
-    <div class="container">
+    <div id="form" class="container">
+        <a id="login" href="#">Login to Twitch</a>
+        <a id="logout" href="#">Logout from Twitch</a>
+    </div>
+    <div id="main" class="container">
         <h1>Laugh Track Bot</h1>
         <br>
         <button id="laugh1" class="btn btn-danger btn-circle btn-lg" onclick="
@@ -23,6 +28,8 @@
     <script src="jquery/dist/jquery.js"></script>
     <script src="/socket.io-client/dist/socket.io.js"></script>
     <script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
     <script src="main.js" type="module"></script>
 </body>
 
