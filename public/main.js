@@ -1,22 +1,6 @@
-// var socket = io();
-// var audio = new Audio('assets\laugh\laugh.mp3');
-// var laughBtn = document.getElementById("laugh1"); 
-// const laf = () => {
-//     audio.play();
-// }
-// console.log(audio)
-// laughBtn.onclick = laf
-// $('#laugh1').click(()=>{
-//     socket.emit('ding', 'la')
-//     return false;
-// })
-
-// socket.on('ding', ()=>{
-//     console.log('test2')
-// })
-
 var LULCounter = 0;
-// let checkLUL = setInterval(()=>{LULCounter = 0}, 5000)
+var reg = /\b(LUL|LuL|lol|LOL)\b/
+// let checkLUL = setInterval(function(){LULCounter = 0}, 5000)
 var options = {
     options: {
         debug: true
@@ -35,7 +19,7 @@ var options = {
 var client = new tmi.client(options);
 client.on("chat", function (channel, userstate, message, self) {
     if (self) return;
-    if (message == "LUL") {
+    if (reg.test(message)) {
         LULCounter++;
         if (LULCounter >= 6) {
             client.say(channel, "hahahaha");
