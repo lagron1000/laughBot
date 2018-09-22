@@ -14,7 +14,7 @@ Twitch.init({ clientId: '0swf50e2k1wc7r4d10qqirz6g74n37' }, function (error, sta
                         debug: true
                     },
                     connection: {
-                        cluster: "aws",
+//                         cluster: "aws",
                         reconnect: true
                     },
                     identity: {
