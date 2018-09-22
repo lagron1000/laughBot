@@ -1,7 +1,6 @@
 // let checkLUL = setInterval(function(){LULCounter = 0}, 5000)
 import rules from '/rules.js';
-
-var reg = /\b(lul|lol|ha)+\b/gi
+// var reg = /\b(lul|lol|ha)+\b/gi
 var LULCounter = 0;
 Twitch.init({ clientId: '0swf50e2k1wc7r4d10qqirz6g74n37' }, function (error, status) {
     if (error) { console.log(error) }

@@ -6,13 +6,13 @@ var rules = [
         counter: 0
     },
     {
-        keyWords: /\b(angry)|(b[oo]+)\b|(:rage:)|\blionSalt|PJSalt\b/i,
+        keyWords: /\b(angry|b[oo]+\b|:rage:|😡|lionSalt|PJSalt)/i,
         responseText: 'boooooo',
         responseDir: $('#booPlayer').get(0),
         counter: 0 
     },
     {
-        keyWords: /(pogchamp)|(POGGERS)|(hypers)|(roopog)/i,
+        keyWords: /(pogchamp|POGGERS|hypers|roopog)/i,
         responseText: 'PogChamp',
         responseDir: $('#hypePlayer').get(0),
         counter: 0 
