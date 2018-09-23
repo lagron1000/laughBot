@@ -23,16 +23,14 @@ Twitch.init({ clientId: '0swf50e2k1wc7r4d10qqirz6g74n37' }, function (error, sta
             $('#login').hide()
             $('#logout').show()
             Twitch.api({ method: 'channel' }, function (error, channel) {
+                console.log('got here once')
                 $.ajax({
                     type: "POST",
                     url: 'http://localhost:8080/endpoint',
                     data: channel,
-                    success: function (data) {
-                        console.log('success');
-                        console.log(JSON.stringify(data));
-                    },
                     dataType: 'application/json'
                 });
+                return;
                 // var options = {
                 //     options: {
                 //         debug: true

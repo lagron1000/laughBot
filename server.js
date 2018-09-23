@@ -17,6 +17,7 @@ var pusher = new Pusher({
   cluster: 'ap2',
   encrypted: true
 });
+
 app.post('/endpoint', function (req, res) {
   var options = {
     options: {
@@ -32,9 +33,7 @@ app.post('/endpoint', function (req, res) {
     },
     channels: [req.body.display_name]
   };
-  // console.log(options)
   var client = new tmi.client(options);
-
 
   client.on("chat", function (channel, userstate, message, self) {
     if (self) return;
