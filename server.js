@@ -19,6 +19,7 @@ var pusher = new Pusher({
 });
 
 app.post('/endpoint', function (req, res) {
+    //remove debug option when done and maybe also reconnect
   var options = {
     options: {
       debug: true
