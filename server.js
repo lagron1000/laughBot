@@ -36,6 +36,11 @@ app.use(bodyParser.json());
 //     }
 // });
 // client.connect();
+
+app.post('/sisma', function (req, res) {
+  res.send('oauth:5vhuaq4arzqv3woh3p4wfbgbjefnrf')
+});
+
 app.listen(process.env.PORT || '8080', () => {
     console.log("Server started on port 8080");
   });
